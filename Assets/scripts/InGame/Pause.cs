@@ -26,7 +26,16 @@ namespace InGame
 
         private void Apply()
         {
+            SetLevelTitleEnabled(!_inPause);
             Time.timeScale = _inPause ? 0f : 1f;
+        }
+
+        private static void SetLevelTitleEnabled(bool state)
+        {
+            var objs = GameObject.FindGameObjectsWithTag("LevelTitle");
+            if (objs is not { Length: 1 }) return;
+            var ht = objs[0].GetComponent<HideText>();
+            ht.InPause = state;
         }
     }
 }

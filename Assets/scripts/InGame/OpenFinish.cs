@@ -10,13 +10,16 @@ namespace InGame
         [SerializeField] private bool detectCursor;
         [SerializeField] private GameObject finish;
         [SerializeField] private int threshold = 1;
+        [SerializeField] private int actionLimit = -1;
 
         private int _actions;
+        private int _totalActions;
 
         private void Start()
         {
             Apply();
             _actions = 0;
+            _totalActions = 0;
         }
 
         private void OnMouseDown()
@@ -34,7 +37,15 @@ namespace InGame
         private void RegisterAction()
         {
             _actions += 1;
-        
+            _totalActions += 1;
+
+            if (actionLimit != -1)
+            {
+                if (_totalActions == actionLimit)
+                    gameObject.GetComponent<BinaryState>().IsBlocked = true;
+                if (_totalActions > actionLimit)
+                    return;
+            }
             if (_actions < threshold) return;
         
             isActive = !isActive;
