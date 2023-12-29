@@ -45,6 +45,7 @@
     <Analyzer Include="Y:\IDE\Unity\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\InGame\MovableToCursor.cs" />
      <Compile Include="Assets\scripts\InGame\Timer.cs" />
      <Compile Include="Assets\scripts\InGame\DnD.cs" />
      <Compile Include="Assets\scripts\InGame\ClickListener.cs" />
@@ -62,6 +63,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\prefab\ui" />
      <Folder Include="Assets\fonts" />
      <Folder Include="Assets\anim\Button" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
